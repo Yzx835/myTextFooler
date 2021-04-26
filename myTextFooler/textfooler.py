@@ -22,7 +22,7 @@ import os
 class TextFooler(Attack):
     def __init__(self, model=None, device=None, IsTargeted=None, **kwargs):
         """
-        @description: Carlini and Wagner’s Attack (C&W)
+        @description: TextFooler
         @param {
             model:
             device:
@@ -38,12 +38,15 @@ class TextFooler(Attack):
         """
         @description: 
         @param {
-            kappa:
-            lr:
-            init_const:
-            lower_bound:
-            upper_bound:
-            binary_search_steps:
+            perturb_ratio: Whether use random perturbation for ablation study
+            sim_score_threshold: Required minimum semantic similarity score.
+            import_score_threshold: Required mininum importance score.
+            sim_score_window: Text length or token number to compute the semantic similarity score
+            synonym_num: Number of synonyms to extract
+            batch_size: Batch size to get prediction
+            counter_fitting_embeddings_path:
+            counter_fitting_cos_sim_path:
+            USE_model_path: Path to the USE encoder cache.
         } 
         @return: None
         """
